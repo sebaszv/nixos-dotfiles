@@ -37,6 +37,8 @@
   outputs =
     inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [ ./system ];
+
       systems = import inputs.systems;
 
       perSystem =
